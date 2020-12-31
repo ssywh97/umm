@@ -50,6 +50,7 @@ console.log('height' in seo); // false
 
 // 6. for..in vs for..of
 console.clear();
+
 for (key in seo){
     console.log(key);
 }
