@@ -4,18 +4,18 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";
 
-let toDos = [];
+let toDos = []; //toDos의 값은 변할 수 있기때문에 let으로 지정
 
 function deleteToDo(event){ //투두를 삭제하는 함수
     const btn = event.target; //이벤트가 발생하는 타겟
     const li = btn.parentNode; //이벤트가 발생하는 타겟의 부모노드(li)
     toDoList.removeChild(li);
     const cleanToDos = toDos.filter(function(toDo){
-        return toDo.id !== parseInt(li.id);
+        //todo의 아이디값과 cleantodo의 아이디값이 다르면 filter를 해줌?
+        return toDo.id !== parseInt(li.id); 
     });
-    console.log(cleanToDos);
-    toDos = cleanToDos;
-    saveToDos();
+    toDos = cleanToDos; //toDos의 값을 cleantoDos의 값으로 바꿈
+    saveToDos(); //toDos의 변경값을 새로 저장
 }
 
 function saveToDos(){
